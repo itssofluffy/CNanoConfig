@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: nanoconfig
+Description: The configuration service for nanomsg
+URL: https://github.com/nanomsg/nanoconfig
+Version: 0.0.1
+Requires:
+Libs: -L${libdir} -lnanomsg -lnanoconfig
+Libs.private: -lanl -lrt -lpthread -lnsl
+Cflags: -I${includedir}
