@@ -22,6 +22,7 @@
 
 import PackageDescription
 
+#if os(Linux) || os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
 let package = Package (
     name: "CNanoConfig",
     pkgConfig: "nanoconfig",
@@ -29,3 +30,6 @@ let package = Package (
         .Package (url: "https://github.com/itssofluffy/CNanoMessage.git", majorVersion: 0)
     ]
 )
+#else
+fatalError("Unsupported OS")
+#endif
